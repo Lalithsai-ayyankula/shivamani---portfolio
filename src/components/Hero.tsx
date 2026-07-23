@@ -127,18 +127,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, photoUrl }) => {
                 {/* Photo Frame Container */}
                 <div className="relative w-36 h-36 sm:w-40 sm:h-40 shrink-0 border-2 border-sky-500/40 bg-[#050811] p-1 group-hover:border-sky-400 transition-all overflow-hidden rounded-xl shadow-lg">
                   <img
-                    src={photoUrl}
+                    src={photoUrl || personalInfo.profileImage}
                     alt={personalInfo.fullName}
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      // Fallback to imported default photo if url load fails
+                      const target = e.target as HTMLImageElement;
+                      if (target.src !== personalInfo.profileImage) {
+                        target.src = personalInfo.profileImage;
+                      }
+                    }}
                     className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105 rounded-lg"
                   />
                 </div>
 
                 {/* Photo Meta */}
                 <div className="space-y-2 text-center sm:text-left flex-1">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#050811] border border-sky-500/30 text-[10px] font-mono text-sky-300 uppercase tracking-wider rounded-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Official Profile Photo</span>
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#050811] border border-sky-500/30 text-[10px] font-mono text-sky-300 uppercase tracking-wider rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>Official Profile Photo</span>
+                    </div>
                   </div>
 
                   <div>

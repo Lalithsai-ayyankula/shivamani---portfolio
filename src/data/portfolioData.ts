@@ -1,4 +1,4 @@
-import profilePhotoAsset from '../assets/images/shivamani_profile_photo_1784825913082.jpg';
+import profilePhotoAsset from '../assets/images/shivamani_profile_photo_1784825913082.jpg.jpeg';
 import {
   PersonalInfo,
   ProfessionalSummary,

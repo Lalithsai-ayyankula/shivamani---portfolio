@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { BrandStrategy } from './components/BrandStrategy';
@@ -13,14 +13,7 @@ import { personalInfo } from './data/portfolioData';
 
 export default function App() {
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
-  const [photoUrl, setPhotoUrl] = useState<string>(personalInfo.profileImage || '');
-
-  useEffect(() => {
-    const savedCustomPhoto = localStorage.getItem('shivamani_custom_photo');
-    if (savedCustomPhoto) {
-      setPhotoUrl(savedCustomPhoto);
-    }
-  }, []);
+  const photoUrl = personalInfo.profileImage || '';
 
   return (
     <div className="min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-sky-500 selection:text-white antialiased relative overflow-x-hidden">

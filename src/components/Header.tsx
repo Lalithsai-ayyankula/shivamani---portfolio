@@ -46,6 +46,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume, photoUrl }) => {
                   src={photoUrl || personalInfo.profileImage}
                   alt={personalInfo.fullName}
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.src !== personalInfo.profileImage) {
+                      target.src = personalInfo.profileImage;
+                    }
+                  }}
                   className="w-full h-full object-cover object-center"
                 />
               ) : (
