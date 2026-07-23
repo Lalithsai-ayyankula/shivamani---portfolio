@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Kutchu Shivamani - Portfolio",
+  "description": "Elite UI/UX \u0026 AI/DS Portfolio for Kutchu Shivamani featuring design systems, wireframes, prototypes, case studies, and AI adoption achievements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
